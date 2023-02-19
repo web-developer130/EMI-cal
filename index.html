@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .amain{
+            border:solid 2px #abb7bf;
+            border-radius:5px;
+            padding:15px;
+            background-color:#ebf4fb;
+            margin:auto;
+            width:40%;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="amain">
+        <form class="LoneForm">
+        <h1>Loan Payments Calculator</h1>
+    <table>
+        <tr>
+            <td colspan="3"><b>Enter the Lone Information</b><br></td>
+        </tr>
+        <tr>
+            <td>Lone Amount in currency:</td>
+            <td><input type="text" name="LoneAmt" id="LoneAmtid" size="12" onchange="ValidateLoneAmount();" </td>
+        </tr>
+        <tr>
+            <td>Lone of Interest in Percentage(%):</td>
+            <td><input type="text" name="Interest" id="interestid" size="12" onchange="ValidateNumber(this.id,this.name);" </td>
+        </tr>
+        <tr>
+            <td>Repayment Period in Year:</td>
+            <td><input type="text" name="year" id="yearid" size="12" onchange="" </td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="button" value="Compute" onclick=""</td>
+        </tr>
+    </table>
+    <br>
+    <table>
+        <tr>
+            <td colspan="2"><b>
+                Payments Information:
+            </b></td>
+        </tr>
+        <tr>
+            <td>Monthly Payment:</td>
+            <td><input type="text" name="MonthlyPayment" id="MonthlyPaymentId" size="12"</td>
+        </tr>
+        <tr>
+            <td>Total Payment:</td>
+            <td><input type="text" name="totalPayment" id="TotalPaymentId" size="12"</td>
+        </tr>
+        <tr>
+            <td>Total Interest Payment:</td>
+            <td><input type="text" name="totalinterest" id="TotalinterestId" size="12"</td>
+        </tr>
+    </table>
+    </div>
+</form>
+<script>
+function ValidateLoneAmount()
+{
+    var loneAmt=document.getElementById("LoneAmtid").value;
+    if(isNaN(loneAmt)){
+        alert("Loan amount should be number");
+        document.getElementById("loneAmtid").focus();
+        document.getElementById("loneAmtid").select();
+        return false;
+
+    }
+    else if(loneAmt>1500000){
+        alert("Loan amount should not more then 15 lakhs");
+        document.getElementById("loneAmtid").focus();
+        document.getElementById("loneAmtid").select();
+        return false;
+    }
+}
+
+</script>
+</body>
+</html>
+
